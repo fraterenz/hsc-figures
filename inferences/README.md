@@ -1,10 +1,9 @@
 # README
 Code to regenerate the figures for the [preprint](https://www.biorxiv.org/content/10.1101/2024.04.16.589764v1) *The dynamic fitness landscape of ageing haematopoiesis through clonal competition*.
 
-Instructions to reproduce each figure can be found in the following jupyter notebooks:
-- `sde.ipynb`
-- `abc/posteriors.ipynb`
-- `dynamics.ipynb`
+Instructions to reproduce the ABC inference from the paper can be found in the folder `abc`.
+
+TODO, what's `doublehit`?
 
 
 ## Requirements
@@ -33,10 +32,15 @@ One way to do it:
 
 
 ### 3. The output of the simulations
-The output of the simulations can either downloaded from [here](https://www.dropbox.com/scl/fi/pjtvnbtk5euxwylsz8pob/data.tar.gz?rlkey=l96bsmfis00473epg78yae43m&st=yo8bxi55&dl=0) or generated with the Rust binary `hsc` with version `v4.3.7`.
-To download the data without regenerating them:
+The output of the simulations can either downloaded from [here](https://www.dropbox.com/scl/fi/pjtvnbtk5euxwylsz8pob/data.tar.gz?rlkey=l96bsmfis00473epg78yae43m&st=yo8bxi55&dl=0) or generated with the Rust binary `hsc` with a specific version for example `v4.3.13`, but in general the newer the better.
+
+#### Download the simulations 
+To download the simulations without regenerating them:
 - Get them from [here](https://www.dropbox.com/scl/fi/pjtvnbtk5euxwylsz8pob/data.tar.gz?rlkey=l96bsmfis00473epg78yae43m&st=yo8bxi55&dl=0) or with `wget "https://www.dropbox.com/scl/fi/pjtvnbtk5euxwylsz8pob/data.tar.gz?rlkey=l96bsmfis00473epg78yae43m&st=yo8bxi55&dl=0" --output-document="data.tar.gz"`
 - untar the data with with gzip: `tar xvf data.tar.gz`
 
-The other option is to regenerate the data with the binary `hsc`, that can be either [downloaded](https://github.com/fraterenz/hsc/releases/tag/v4.3.7) or compiled from the source code (requires [Rust](https://www.rust-lang.org) to be installed).
-To compile from source, get the code from [here](https://github.com/fraterenz/hsc/tree/v4.3.7) and compile it with cargo `cargo b --release`.
+#### Generate the simulations
+The other option is to regenerate the data with the binary `hsc`, that can be either [downloaded](https://github.com/fraterenz/hsc/releases/) or compiled from the source code (requires [Rust](https://www.rust-lang.org) to be installed).
+To compile from source, get the code from [here](https://github.com/fraterenz/hsc) and compile it with cargo `cargo b --release`.
+
+Once the binary file has been downloaded or generated from source code, then run the simulations following the instructions in [here](https://github.com/fraterenz/hsc-figures/tree/master/inferences/abc/README.md). On the HPC cluster at QMUL, it takes a couple of days to create the database of simulations using array jobs.

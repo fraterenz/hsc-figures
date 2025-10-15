@@ -12,7 +12,7 @@ PATH2PARAMS=$1
 # Check if argument was provided
 if [ -z "$PATH2PARAMS" ]; then
     echo "Error: No parameters file provided"
-    echo "Usage: $0 <path/to/parameters.txt>"
+    echo "Usage: $0 </my/path/to/parameters.txt>"
     exit 1
 fi
 

@@ -5,6 +5,8 @@
 #$ -l h_rt=24:0:0
 #$ -t 1-900
 #$ -o jobs/$JOB_NAME.$JOB_ID.$TASK_ID.out
+
+# TODO: rm this and use particles.sh in inferences/abc
 if [ "$#" -ne 1 ]; then
     echo "Illegal number of arguments: must provide one parameters.txt file"
     exit 2
